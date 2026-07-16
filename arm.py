@@ -40,5 +40,5 @@ class Arm :
         # 5. return la liste
         return poses
 
-    def end_effector_pose(self, angles):
+    def end_effector(self, angles):
         return self.fk(angles)[-1]
