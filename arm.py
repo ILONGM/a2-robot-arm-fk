@@ -39,3 +39,6 @@ class Arm :
             poses.append(pose_courante)
         # 5. return la liste
         return poses
+
+    def end_effector_pose(self, angles):
+        return self.fk(angles)[-1]
