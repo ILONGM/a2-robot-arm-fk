@@ -23,17 +23,15 @@ def update_graph(_):
 
 
 if __name__ == "__main__":
-    # mise en page (les add_axes ci-dessus), création des 2 sliders,
-    # branchement : s1.on_changed(update), s2.on_changed(update)
-    
+   
     fig = plt.figure()
-    ax = fig.add_axes([0.1, 0.3, 0.8, 0.6])  # zone de dessin
-    s1_ax = fig.add_axes([0.1, 0.2, 0.8, 0.03])  # slider 1
-    s2_ax = fig.add_axes([0.1, 0.1, 0.8, 0.03])  # slider 2
+    ax = fig.add_axes([0.1, 0.3, 0.8, 0.6])  
+    s1_ax = fig.add_axes([0.1, 0.2, 0.8, 0.03])  
+    s2_ax = fig.add_axes([0.1, 0.1, 0.8, 0.03]) 
     s1 = Slider(s1_ax, "theta1", -np.pi, np.pi, valinit=0.0)
     s2 = Slider(s2_ax, "theta2", -np.pi, np.pi, valinit=0.0)
     s1.on_changed(update_graph)
     s2.on_changed(update_graph)   
     
-    update_graph(None)     # dessiner l'état initial sans attendre un glissement
+    update_graph(None)     
     plt.show()
