@@ -49,4 +49,7 @@ def assert_pose_at(pose, x, y, theta=None):
         diff = normalize_angle(pose.theta - theta)
         assert np.isclose(diff, 0.0), f"theta: attendu {theta}, obtenu {pose.theta}"
 
-        # assert np.isclose(pose.theta, theta), f"theta: attendu {theta}, obtenu {pose.theta}"
+def test_end_effector_cablage():
+    arm = Arm([1.0, 0.8])
+    angles = [0.3, -0.7]
+    assert np.allclose(arm.end_effector(angles).matrix, arm.fk(angles)[-1].matrix)
